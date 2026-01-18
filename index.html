@@ -11,9 +11,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&family=Lora:wght@400;500;600;700&family=Roboto+Mono:wght@300;400;500;600&family=DM+Serif+Display&family=Sora:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
       @media print {
+        @page {
+          margin: 0;
+          size: auto;
+        }
         .no-print { display: none !important; }
         .print-only { display: block !important; }
-        body { background: white !important; }
+        body { 
+          background: white !important; 
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+        }
+        section {
+          page-break-inside: avoid;
+        }
+        .portfolio-page-break {
+          page-break-after: always;
+        }
+      }
+      /* Custom utility for print background preservation */
+      .print-exact {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
       }
     </style>
   <script type="importmap">
